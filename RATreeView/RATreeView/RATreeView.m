@@ -560,6 +560,10 @@
   UITableViewRowAnimation tableViewRowAnimation = [RATreeView tableViewRowAnimationForTreeViewRowAnimation:animation];
   for (id item in items) {
     NSIndexPath *indexPath = [self indexPathForItem:item];
+    // if element wasn't found then indexPathForItem: returns not nil but indexPath where row == NSNotFound
+    if (indexPath.row == NSNotFound) {
+      continue;
+    }
     [indexes addObject:indexPath];
   }
 
