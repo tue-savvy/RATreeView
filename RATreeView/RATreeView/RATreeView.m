@@ -29,8 +29,6 @@
 #import "RATreeNodeCollectionController.h"
 #import "RATreeNode.h"
 
-#import "RATableView.h"
-
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 @implementation RATreeView
@@ -73,8 +71,8 @@
 {
   UITableViewStyle tableViewStyle = [RATreeView tableViewStyleForTreeViewStyle:style];
 
-  RATableView *tableView =  [[RATableView alloc] initWithFrame:frame style:tableViewStyle];
-  tableView.tableViewDelegate = (id<UITableViewDelegate>)self;
+  UITableView *tableView =  [[UITableView alloc] initWithFrame:frame style:tableViewStyle];
+  tableView.delegate = (id<UITableViewDelegate>)self;
   tableView.dataSource = (id<UITableViewDataSource>)self;
   tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   tableView.backgroundColor = [UIColor clearColor];

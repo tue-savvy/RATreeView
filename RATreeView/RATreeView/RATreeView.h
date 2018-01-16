@@ -435,6 +435,24 @@ typedef enum RATreeViewRowAnimation {
  */
 - (void)treeView:(RATreeView *)treeView didUnhighlightRowForItem:(id)item;
 
+
+#pragma mark - ScrollView delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView;
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
+                     withVelocity:(CGPoint)velocity
+              targetContentOffset:(inout CGPoint *)targetContentOffset;
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView;
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView;
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView;
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView;
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view;
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale;
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView;
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView;
+
 @end
 
 
